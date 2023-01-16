@@ -18,7 +18,8 @@ def foolproof_input(prompt, lower_bound, upper_bound):
             print('\nOK. Stoping now.')
             break
 
-# ============================================
+
+# ----------------------------------------------------------------
 
 if __name__ == '__main__':
 

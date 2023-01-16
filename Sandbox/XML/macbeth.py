@@ -7,7 +7,7 @@ import xml.etree.ElementTree as ET
 tree = ET.parse(r'Macbeth.xml')
 root = tree.getroot()
 
-# print(root)
+print(root)
 
 # for e1 in root:
 #     print(e1.tag)
@@ -36,9 +36,6 @@ scenes = root.findall('.//SCENE/TITLE')
 for s in scenes:
     print(s.text)
 
-sys.exit()
-
-
 
 print('\n------ SPEECHES BY DUNCAN -------------------------\n')
 
@@ -47,6 +44,8 @@ for s in speeches:
     for l in s.findall('LINE'):
         print(l.text)
     print()
+
+sys.exit()
 
 print('\n------ SPEECH WITH MOST LINES ---------------------\n')
     

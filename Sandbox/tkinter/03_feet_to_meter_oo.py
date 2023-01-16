@@ -37,6 +37,8 @@ class FeetToMeters:
         except ValueError:
             pass
 
+# -----------------------------------------
+
 root = Tk()
 FeetToMeters(root)
 root.mainloop()

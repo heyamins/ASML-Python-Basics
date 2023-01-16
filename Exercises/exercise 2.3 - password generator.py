@@ -1,39 +1,32 @@
 import random
 
-minimum_length = 0
+minimum_length = 6
 n_lowercase = 2
 n_uppercase = 2
-n_numbers = 1
-n_special = 1
+n_numbers = 2
+n_special = 2
+n_extra = max([0, minimum_length - n_lowercase - n_uppercase - n_numbers - n_special])
 
-LOWERCASE_CHARACTERS = 'abcdefghijkmnopqrstuvwxyz' # removed l
-UPPERCASE_CHARACTERS = 'ABCDEFGHJKLMNPQRSTUVWXYZ' # removed I and O
+# import string
+# LOWERCASE_CHARACTERS = string.ascii_uppercase
+# UPPERCASE_CHARACTERS = string.ascii_lowercase
+# NUMBER_CHARACTERS = string.digits
+# SPECIAL_CHARACTERS = string.punctuation
+#or
+LOWERCASE_CHARACTERS = 'abcdefghijkmnopqrstuvwxyz'  # removed l
+UPPERCASE_CHARACTERS = 'ABCDEFGHJKLMNPQRSTUVWXYZ'  # removed I and O
 NUMBER_CHARACTERS = '0123456789'
-SPECIAL_CHARACTERS = '@#$%&*+?!'
+SPECIAL_CHARACTERS = '@#$%&*+?!{}'
 
-lower = random.choices(LOWERCASE_CHARACTERS,
-                       k = n_lowercase)
+ALL_CHARACTERS = LOWERCASE_CHARACTERS + UPPERCASE_CHARACTERS + NUMBER_CHARACTERS + SPECIAL_CHARACTERS
 
-upper = random.choices(UPPERCASE_CHARACTERS,
-                       k = n_uppercase)
+lowercase = random.choices(LOWERCASE_CHARACTERS, k = n_lowercase)
+uppercase = random.choices(UPPERCASE_CHARACTERS, k = n_uppercase)
+numbers = random.choices(NUMBER_CHARACTERS, k = n_numbers)
+special = random.choices(SPECIAL_CHARACTERS, k = n_special)
+extra = random.choices(ALL_CHARACTERS, k = n_extra)
 
-numbers = random.choices(NUMBER_CHARACTERS,
-                         k = n_numbers)
-
-special = random.choices(SPECIAL_CHARACTERS,
-                         k = n_special)
-
-n_extra = minimum_length - n_lowercase - n_uppercase - n_numbers - n_special
-if n_extra > 0:
-    extra = random.choices(LOWERCASE_CHARACTERS +
-                           UPPERCASE_CHARACTERS +
-                           NUMBER_CHARACTERS +
-                           SPECIAL_CHARACTERS,
-                           k = n_extra)
-else:
-    extra = []
-    
-all_characters = lower + upper + numbers + special + extra
+all_characters = lowercase + uppercase + numbers + special + extra
 
 random.shuffle(all_characters)
 
