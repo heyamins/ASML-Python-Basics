@@ -1,17 +1,17 @@
-t = input('Give me some text please: ')
+s = input('Give me some text please: ')
 
-print('Original:', t)
-print('Upper:', t.upper())
-print('Lower:', t.lower())
-print('Capitalize:', t.capitalize())
-print('Title:', t.title())
+print('Original:', s)
+print('Upper:', s.upper())
+print('Lower:', s.lower())
+print('Capitalize:', s.capitalize())
+print('Title:', s.title())
 
-print('First three characters:', t[:3])
+print('First three characters:', s[:3])
 
-print('Ends with a ?:', t.endswith('?'))
+print('Ends with a ?:', s.endswith('?'))
 
-print('Snake case:', t.lower().replace(' ', '_'))
+print('Snake case:', s.lower().replace(' ', '_'))
 
-print('Pascal case:', t.title().replace(' ', ''))
-print('Camel case:', t[0].lower() + t.title().replace(' ', '')[1:])
-print('Screaming case:', t.upper().replace(' ', '_'))
+print('Pascal case:', s.title().replace(' ', ''))
+print('Camel case:', s[0].lower() + s.title().replace(' ', '')[1:])
+print('Screaming case:', s.upper().replace(' ', '_'))
