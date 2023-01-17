@@ -7,6 +7,16 @@ def banner(text):
     print('***' + '*' * n + '***')
 
 
+def box(text):
+    """Create the text in a box using unicode box characters"""
+    n = len(text)
+    s  = '┏━━' + '━' * n + '━━┓\n'
+    s += '┃  ' + text    + '  ┃\n'
+    s += '┗━━' + '━' * n + '━━┛'
+    return s
+
+
+
 def create_banner(text, c = '*', max_length = None):
     """A more generic function to create a banner
 
@@ -40,6 +50,5 @@ if __name__ == '__main__':
 
     banner(name)
 
-    settings = {'c': '+', 'max_length': 20}
-
-    print_banner(name, **settings)
+    s = box(name)
+    print(s)
