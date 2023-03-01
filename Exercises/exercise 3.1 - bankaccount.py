@@ -1,20 +1,20 @@
 class BankAccount:
 
     def __init__(self, number, holder, balance = 0):
-        self.__holder = holder
-        self.__number = number
-        self.__balance = balance
+        self._holder = holder
+        self._number = number
+        self._balance = balance
 
     def withdraw(self, amount):
-        self.__balance -= amount
+        self._balance -= amount
         print(f'Withdraw of €{amount}')
 
     def deposit(self, amount):
-        self.__balance += amount
+        self._balance += amount
         print(f'Deposit of €{amount}')
 
     def get_info(self):
-        return f'Bankaccount with number {self.__number} belongs to {self.__holder} has a balance of €{self.__balance}.'
+        return f'Bankaccount with number {self._number} belongs to {self._holder} has a balance of €{self._balance}.'
 
 
 # ---------------------------------------------------------

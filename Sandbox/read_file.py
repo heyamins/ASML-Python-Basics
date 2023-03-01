@@ -1,17 +1,28 @@
 import re
+import os
 
-filename = 'ca-500.csv'
+filename = 'ca-500x.csv'
+results_filename = 'results.csv'
 
-with open(filename, 'r') as f:
-    headers = f.readline().strip().split(';')
+try:
 
-    for line in f:
-        values = line.strip().split(';')
+    with open(filename, 'r') as f:
+        with open(results_filename, 'a') as f_out:
 
-        d = dict(zip(headers, values))
+            headers = f.readline().strip().split(';')
 
-        if d['city'] in ('Montreal',):
+            for linenr, line in enumerate(f, start = 1):
+                values = line.strip().split(';')
 
-            print('%-15s %-15s %-35s %-25s' %
-                  (d['first_name'], d['last_name'], d['email'], d['city']))
+                d = dict(zip(headers, values))
 
+                if d['city'] in ('Montreal', 'Toronto'):
+                    print(f'{linenr:3}: {d["first_name"]:20} {d["last_name"]:20} {d["email"]:40} {d["city"]:20}')
+
+                    print(linenr, d["first_name"], d["last_name"], d["email"], d["city"], sep = ',', file = f_out)
+
+except FileNotFoundError:
+    print('File does not exist')
+
+except:
+    print('Error')
