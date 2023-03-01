@@ -94,5 +94,5 @@ if __name__ == '__main__':
 
     print(Car.class_name())
 
-    # del my_car
+    del my_car
 
