@@ -1,4 +1,3 @@
-import turtle
 
 class Vector:
 
@@ -6,54 +5,38 @@ class Vector:
         self._x = x
         self._y = y
 
+    def __str__(self):
+        return f'[{self._x},{self._y}]'
+
     def __repr__(self):
-        return 'Vector(%d, %d)' % (self._x, self._y)
+        return f'[{self._x},{self._y}]'
 
     def __add__(self, other):
         return Vector(self._x + other._x, self._y + other._y)
 
     def length(self):
-        return (self._x ** 2 + self._y ** 2) ** 0.5 
+        return (self._x ** 2 + self._y ** 2) ** 0.5
 
-class Path:
+    def __eq__(self, other):
+        return self.length() == other.length()
+    def __ne__(self, other):
+        return self.length() != other.length()
+    def __lt__(self, other):
+        return self.length() < other.length()
+    def __le__(self, other):
+        return self.length() <= other.length()
+    def __gt__(self, other):
+        return self.length() > other.length()
+    def __ge__(self, other):
+        return self.length() >= other.length()
 
-    def __init__(self):
-        self._vectors = []
+# ----------------------------------------
 
-    def add(self, vector):
-        self._vectors.append(vector)
+v1 = Vector(6, 6)
+print(v1)
 
-    def __repr__(self):
-        return '\n'.join(map(str, self._vectors))
-
-    def draw(self, factor = 30):
-        for v in self._vectors:
-            x, y = turtle.pos()
-            turtle.goto(x + v._x * factor, y + v._y * factor)
-        
-        
-
-
-#=====================================================
-
-
-v1 = Vector(3, 3)
 v2 = Vector(-2, 3)
+print(v2)
 
-p = Path()
-p.add(v1)
-p.add(v2)
-p.add(v1)
-p.add(Vector(3, -7))
-p.add(Vector(-5, -2))
-
-print(p)
-
-p.draw()
-turtle.done()
-
-
-
-
-
-
+v3 = v1 + v2
+print(v3)

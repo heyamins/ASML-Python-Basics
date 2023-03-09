@@ -1,12 +1,21 @@
 class Car:
+    """Simulates a car.
+
+    Many useful methods"""
 
     def __init__(self, make, model, color, mileage=0):
-        self._make = make
+        """My initialization function
+
+        @param make - Make of the car. E.g. Porsche
+        @param model - Model. e.g. 911"""
+
+        self._make = make # ignored
         self._model = model
         self._color = color
         self._mileage = mileage
 
     def __str__(self):
+        """"""
         return f'{self._color} {self._make} {self._model} mileage: {self._mileage}km.'
 
     def __repr__(self):

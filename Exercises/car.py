@@ -1,16 +1,5 @@
 class Car:
 
-    CLASS_NAME = 'Car'
-    VERSION = '1.0'
-
-    @staticmethod
-    def class_name():
-        return Car.CLASS_NAME
-
-    @staticmethod
-    def get_version():
-        return Car.VERSION
-
     def calculate_amount_of_gas(self, number_of_kilometers):
         return number_of_kilometers / self._kml
 
@@ -76,8 +65,6 @@ class Car:
         print('The car has been demolished. Too bad.')
 
 
-
-    
 # -------------------------------------------------------
 
 if __name__ == '__main__':
@@ -91,8 +78,6 @@ if __name__ == '__main__':
 
     my_car.info()
     print(my_car)
-
-    print(Car.class_name())
 
     del my_car
 
