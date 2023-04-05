@@ -1,1 +1,4 @@
-Het lijkt er meer en meer op dat chipmachinefabrikant ASML in Veldhoven de speelbal wordt van een geopolitiek spel tussen de Verenigde Staten en China. Dinsdag praat premier Rutte met de Amerikaanse president Joe Biden. De inzet voor de Amerikanen: een exportverbod voor chipmachines richting China. "Dit is funest voor ASML", zegt hightech-oorlogsdeskundige Paul Verhagen van het Haags Centrum voor Strategische Studies (HCSS).
+line
+another line
+and line 3
+and the end

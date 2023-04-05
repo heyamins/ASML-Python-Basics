@@ -10,46 +10,46 @@ De gemeente verwelkomde haar 225.000e inwoner[2] op 24 november 2015. De stad gr
 
 # clean up
 
-##s = s.lower().replace('.', '').replace(',', '').replace('(', '').replace(')', '')
+# s = s.lower().replace('.', '').replace(',', '').replace('(', '').replace(')', '')
+#
+# or
+# s = s.lower().translate(str.maketrans('', '', '.,(){}[]/\|#&'))
 
 # or
-s = s.lower().translate(str.maketrans('', '', '.,(){}[]/\|#&'))
-
-# or
-##import string
-##s = s.lower().translate(str.maketrans('', '', string.punctuation))
+import string
+s = s.lower().translate(str.maketrans('', '', string.punctuation))
 
 # or
 # import re
 # s = re.sub(r'[^a-zA-Z ]', '', s.lower())
 
-# or
-##import re
-##words = re.split(' ,\.', s)
+
+
 
 
 words = s.split()
-
-
 
 unique_words = set(words)
 
 d = dict()
 for word in unique_words:
-    n = words.count(word)
-    d[word] = n
+    d[word] = words.count(word)
 
-# or
-d = {word: words.count(word) for word in set(words)}
-
-
-for word, n in sorted(d.items()):
+for word, n in sorted(d.items(), key = lambda item: item[1], reverse=True):
    print(f'{word:20}: {n:3} {"*" * n}')
 
 
 
 
 
+
+
+
+# # or with a dict comprehension
+# d = {word: words.count(word) for word in set(words)}
+
+# for word, n in sorted(d.items()):
+#     print(f'{word:20}: {n:3} {"*" * n}')
 
 # from operator import itemgetter
 # for word, n in sorted(d.items(), key = itemgetter(1, 0), reverse = True):
@@ -67,3 +67,10 @@ for word, n in sorted(d.items()):
 #     print(f'{word:<25}: {n:3}')
 #     # or
 #     print('%-15s: %3d %s' % (word, n, '*' * n))
+
+
+
+# # or with collection.Counter
+# from collections import Counter
+# d = Counter(s.lower().translate(str.maketrans('', '', string.punctuation)).split())
+# print(d)

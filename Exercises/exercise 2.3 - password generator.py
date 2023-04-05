@@ -1,6 +1,6 @@
 import random
 
-minimum_length = 6
+minimum_length = random.randint(8, 20)
 n_lowercase = 2
 n_uppercase = 2
 n_numbers = 2
@@ -13,6 +13,7 @@ n_extra = max([0, minimum_length - n_lowercase - n_uppercase - n_numbers - n_spe
 # NUMBER_CHARACTERS = string.digits
 # SPECIAL_CHARACTERS = string.punctuation
 #or
+
 LOWERCASE_CHARACTERS = 'abcdefghijkmnopqrstuvwxyz'  # removed l
 UPPERCASE_CHARACTERS = 'ABCDEFGHJKLMNPQRSTUVWXYZ'  # removed I and O
 NUMBER_CHARACTERS = '0123456789'

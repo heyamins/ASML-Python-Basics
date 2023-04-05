@@ -9,7 +9,6 @@ while True:
         break
 
 
-
 print('\nThe entered names are:')
 for name in sorted(names):
     print(name)
