@@ -64,6 +64,7 @@ class SavingsAccount(BankAccount, Logging):
     def get_info(self):
         return f'Savingsaccount with number {self._number} belongs to {self._holder} has a balance of {BankAccount.currency}{self._balance}. Interest {self._interest}'
 
+
 # ---------------------------------------------------------
 
 if __name__ == '__main__':
