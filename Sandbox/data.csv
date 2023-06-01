@@ -1,4 +1,5 @@
-name;class;amount
-Peter;A;12
-Steven;B;32
-Cecilia;B;43
+name,class,amount,e-mail
+Peter,A,12,peter@tip.nl
+Steven,B,32,steven$asml.com
+Cecilia,B,43,?
+Joana,b+,43,joana@asml.com

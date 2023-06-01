@@ -13,6 +13,15 @@ import random
 
 
 
+
+
+
+
+
+
+
+
+
 # dices = random.choices(range(1, 7), k = 5)
 #
 # print('Thrown', dices)
@@ -21,12 +30,12 @@ import random
 
 
 
-# dices = []
-# for _ in range(5):
-#     dices.append(random.randint(1, 6))
-#
-# print('Thrown', dices)
-# print('Total', sum(dices))
+dices = []
+for _ in range(5):
+    dices.append(random.randint(1, 6))
+
+print('Thrown', dices)
+print('Total', sum(dices))
 
 
 

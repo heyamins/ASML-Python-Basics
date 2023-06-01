@@ -1,11 +1,11 @@
 s = input('Give some text: ')
 
-number_of_a = s.count('a')
-number_of_e = s.count('e')
-number_of_i = s.count('i')
-number_of_o = s.count('o')
-number_of_u = s.count('u')
-number_of_y = s.count('y')
+number_of_a = s.lower().count('a')
+number_of_e = s.lower().count('e')
+number_of_i = s.lower().count('i')
+number_of_o = s.lower().count('o')
+number_of_u = s.lower().count('u')
+number_of_y = s.lower().count('y')
 
 number_of_vowels = number_of_a + \
                    number_of_e + \

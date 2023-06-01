@@ -5,10 +5,10 @@ age = int(input('What age? : '))
 if age < 2:
     print('A baby')
 
-elif age < 4:
+elif 2 <= age < 4:
     print('A toddler')
 
-elif age < 13:
+elif 3 <= age < 13:
     print('A kid')
 
 elif age >= 13 and age < 20:
@@ -27,6 +27,18 @@ else:
 
 
 
+lijst = [{'bounds': [0, 2], 'stage': 'A baby'},
+         {'bounds': [2, 4], 'stage': 'A toddler'},
+         {'bounds': [4, 12], 'stage': 'A kid'},
+         {'bounds': [13, 20], 'stage': 'A teenager'},
+         {'bounds': [21, 65], 'stage': 'An adult'},
+         {'bounds': [65, 110], 'stage': 'An elder'}]
+
+for d in lijst:
+   lower, upper = d['bounds']
+   if lower <= age < upper:
+       print(d['stage'])
+       break
 
 
 
@@ -34,37 +46,15 @@ else:
 
 
 
+d = {'A baby': [0, 2],
+     'A toddler': [2, 4],
+     'A kid': [4, 12],
+     'A teenager': [13, 20],
+     'An adult': [21, 65],
+     'An elder': [65, 110]}
 
-
-
-##lijst = [{'bounds': [0, 2], 'stage': 'baby'},
-##         {'bounds': [2, 4], 'stage': 'toddler'},
-##         {'bounds': [4, 12], 'stage': 'kid'},
-##         {'bounds': [13, 20], 'stage': 'teenager'},
-##         {'bounds': [21, 65], 'stage': 'adult'},
-##         {'bounds': [65, 110], 'stage': 'elder'}]
-##
-##for d in lijst:
-##    lower, upper = d['bounds']
-##    if lower <= age < upper:
-##        print(d['stage'])
-##        break
-
-
-
-
-
-
-##d = {'baby': [0, 2]},
-##     'toddler': [2, 4]},
-##     'kid': [4, 12]},
-##     'teenager': [13, 20]},
-##     'adult': [21, 65]},
-##     'elder': [65, 110]}
-##
-##for k, v in d.items():
-##    lower, upper = v
-##    if lower <= age < upper:
-##        print(k)
-##        break
-
+for k, v in d.items():
+    lower, upper = v
+    if lower <= age < upper:
+        print(k)
+        break

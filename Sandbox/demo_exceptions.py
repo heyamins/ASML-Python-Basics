@@ -1,29 +1,15 @@
 
-def get_number_input(lower, upper):
-    while True:
-        try:
-            number = int(input(f'Give a number between {lower} and {upper}: '))
-            if lower <= number <= upper:
-                return number
-            else:
-                print(f'That number is not between {lower} and {upper}!')
-        except ValueError:
-            print(f'That is not a number!')
+while True:
+    try:
+        number = int(input('give a number: '))
 
+        print(number)
+        print(10/number)
 
-def get_number_input(lower, upper):
-    while True:
-        response = input(f'Give a number between {lower} and {upper}: ')
-        if response.isdigit():
-            number = int(response)
-            if lower <= number <= upper:
-                return number
-            else:
-                print(f'That number is not between {lower} and {upper}!')
-        else:
-            print(f'That is not a number!')
+        break
 
+    except ValueError:
+        print('That is not a number, mom!')
 
-
-
-print( get_number_input(1, 10) )
+    except ZeroDivisionError:
+        print('Cannot divide by 0')

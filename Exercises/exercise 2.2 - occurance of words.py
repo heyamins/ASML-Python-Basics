@@ -1,11 +1,13 @@
 
-s = r"""\
-Eindhoven (Geluidsfragment uitspraak (info / uitleg)) is een stad en gemeente in de Kempen, in het zuidoosten van de Nederlandse provincie Noord-Brabant. Het is naar inwonertal al sinds 1961 de vijfde gemeente van Nederland. Ze telt 238.478 inwoners (31 januari 2022) op een grondgebied van 88,84 km². Ze omvat naast de gelijknamige stad Eindhoven tevens het dorp Acht en de uitbreidingslocatie Meerhoven.
+s = r"""Python was conceived in the late 1980s[43] by Guido van Rossum at Centrum Wiskunde & Informatica (CWI) in the Netherlands as a successor to the ABC programming language, which was inspired by SETL,[44] capable of exception handling and interfacing with the Amoeba operating system.[13] Its implementation began in December 1989.[45] Van Rossum shouldered sole responsibility for the project, as the lead developer, until 12 July 2018, when he announced his "permanent vacation" from his responsibilities as Python's "benevolent dictator for life", a title the Python community bestowed upon him to reflect his long-term commitment as the project's chief decision-maker.[46] In January 2019, active Python core developers elected a five-member Steering Council to lead the project.[47][48]
 
-De gemeente Eindhoven maakte in de eerste helft en het midden van de twintigste eeuw een explosieve groei door. In 1920 annexeerde de stad — aan het begin van de eeuw een klein Kempisch stadje — vijf omliggende gemeenten, waardoor de gemeente ineens enorm vergroot werd, zowel qua oppervlakte (van 75 tot 6300 ha) als qua inwoneraantal (van 6.500 naar 46.000).[1] Op 1 januari 1940 had Eindhoven al 113.126 inwoners.[1] Het schaarde zich daarmee al hoog op de ranglijst van grootste gemeentes in Nederland. In de volgende 75 jaar werd dit inwonertal verdubbeld. Allesbepalend voor deze ontwikkeling was de groei van het Philips-concern, van gloeilampenfabriek tot multinational en wereldspeler op het gebied van de elektronica.
+Python 2.0 was released on 16 October 2000, with many major new features such as list comprehensions, cycle-detecting garbage collection, reference counting, and Unicode support.[49] Python 3.0, released on 3 December 2008, with many of its major features backported to Python 2.6.x[50] and 2.7.x. Releases of Python 3 include the 2to3 utility, which automates the translation of Python 2 code to Python 3.[51]
 
-De gemeente verwelkomde haar 225.000e inwoner[2] op 24 november 2015. De stad groeit nog steeds: de prognose is dat het aantal inwoners van de gemeente in 2040 zal zijn gestegen naar 248.000.[3] De gemeente is de hoofdplaats van de Metropoolregio Eindhoven (MRE) en maakt deel uit van het stedelijk netwerk BrabantStad. De agglomeratie Eindhoven (niet te verwarren met de metropoolregio), bestaande uit onder andere de gemeenten Eindhoven, Veldhoven, Best, Nuenen en Geldrop-Mierlo, telt bijna 420.000 inwoners op een oppervlakte van ongeveer 540 km². In de MRE wonen ongeveer 750.000 mensen."""
+Python 2.7's end-of-life was initially set for 2015, then postponed to 2020 out of concern that a large body of existing code could not easily be forward-ported to Python 3.[52][53] No further security patches or other improvements will be released for it.[54][55] Currently only 3.7 and later are supported. In 2021, Python 3.9.2 and 3.8.8 were expedited[56] as all versions of Python (including 2.7[57]) had security issues leading to possible remote code execution[58] and web cache poisoning.[59]
 
+In 2022, Python 3.10.4 and 3.9.12 were expedited[60] and 3.8.13, and 3.7.13, because of many security issues.[61] When Python 3.9.13 was released in May 2022, it was announced that the 3.9 series (joining the older series 3.8 and 3.7) would only receive security fixes in the future.[62] On September 7, 2022, four new releases were made due to a potential denial-of-service attack: 3.10.7, 3.9.14, 3.8.14, and 3.7.14.[63][64]
+
+As of November 2022, Python 3.11 is the stable release. Notable changes from 3.10 include increased program execution speed and improved error reporting.[65]"""
 
 
 # clean up
@@ -14,10 +16,10 @@ De gemeente verwelkomde haar 225.000e inwoner[2] op 24 november 2015. De stad gr
 #
 # or
 # s = s.lower().translate(str.maketrans('', '', '.,(){}[]/\|#&'))
-
+#
 # or
 import string
-s = s.lower().translate(str.maketrans('', '', string.punctuation))
+s = s.lower().translate(str.maketrans('', '', string.punctuation + string.digits))
 
 # or
 # import re
@@ -35,8 +37,16 @@ d = dict()
 for word in unique_words:
     d[word] = words.count(word)
 
-for word, n in sorted(d.items(), key = lambda item: item[1], reverse=True):
-   print(f'{word:20}: {n:3} {"*" * n}')
+
+for word, n in sorted(d.items(), key = lambda item: item[1], reverse = True):
+
+    print(f'{word:20}: {n:3} {"*" * n}')
+
+
+
+
+# for word, n in sorted(d.items(), key = lambda item: item[1], reverse=True):
+#    print(f'{word:20}: {n:3} {"*" * n}')
 
 
 

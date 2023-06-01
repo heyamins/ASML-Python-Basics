@@ -1,46 +1,30 @@
 
-shopping_list = []
-shopping_list.append('bread')
-shopping_list.append('butter')
-shopping_list.extend(['apples', 'kiwis'])
-shopping_list.insert(0, 'beer')
-shopping_list.append(99)
-shopping_list.pop()
-shopping_list.remove('beer')
+shopping_list = ['eggs', 'butter']
 
-print(shopping_list)
+shopping_list.append('milk')
+shopping_list.append('bread')
+
+shopping_list.insert(0, 'beer')
+shopping_list.insert(1, 'wine')
+
+print( shopping_list )
+
+print( f"Don't forget {shopping_list[0]}!" )
+print( f"Don't forget {shopping_list[-1]}!" )
 
 shopping_list.sort()
+print( shopping_list )
 
-print(shopping_list)
+shopping_list.extend(['cola', '7-up', 'orangejuice', 'cola', 'cola'])
+shopping_list = shopping_list + ['cola', '7-up', 'orangejuice', 'cola', 'cola']
 
-print(len(shopping_list))
+# print( shopping_list.pop() )
+# print( shopping_list.pop(3) )
+# print( shopping_list )
 
-#-----------------------------------------------
+shopping_list.remove('butter')
+# shopping_list.remove('butter')  # does not work
+print( shopping_list )
 
-numbers = [1.0, 5.3, 3, 4, 7, 2]
+print( shopping_list.index('bread') )
 
-for number in numbers:
-    print(number)
-
-print(len(numbers))
-print(min(numbers))
-print(max(numbers))
-print(sum(numbers))
-
-print(numbers[0])
-
-numbers.append([1, 3])
-print(numbers)
-
-
-squared = []
-for n in numbers:
-    squared.append(n ** 2)
-
-
-squared = [n ** 2 for n in numbers]
-
-
-
-print(squared)

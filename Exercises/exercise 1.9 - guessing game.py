@@ -5,12 +5,13 @@ upper = 100
 
 magic_number = random.randint(lower, upper)
 
-guess = int(input('Guess a number between %d and %d' % (lower, upper)))
-number_of_guesses = 1
+print(f'Guess a number between {lower} and {upper}.')
+number_of_guesses = 0
 
 while True:
 
-    guess = int(input('What is your next guess? '))
+    guess = int(input('What is your guess? '))
+
     number_of_guesses += 1
 
     if guess > magic_number:
@@ -20,5 +21,5 @@ while True:
         print('higher ...')
 
     else:
-        print(f'YEAAAH!!!! You guessed it in {number_of_guesses} guesses')
+        print(f'YEAAAH!!!! You guessed it in {number_of_guesses} guesses.')
         break

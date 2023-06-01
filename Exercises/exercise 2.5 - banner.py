@@ -1,10 +1,29 @@
 
-def banner(text):
+# def banner(text):
+#     """Print the text as a banner"""
+#     n = len(text)
+#     print('***' + '*' * n + '***')
+#     print('*  ' + text    + '  *')
+#     print('***' + '*' * n + '***')
+
+def banner(text, c = '*'):
     """Print the text as a banner"""
     n = len(text)
-    print('***' + '*' * n + '***')
-    print('*  ' + text    + '  *')
-    print('***' + '*' * n + '***')
+    print(c * (n + 6))
+    print(c + '  ' + text    + '  ' + c)
+    print(c * (n + 6))
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 def box(text):
@@ -36,6 +55,7 @@ def create_banner(text, c = '*', max_length = None):
     s += c * (n + 6)
     return s
 
+
 def print_banner(text, **kwargs):
     """Print the created banner"""
     print(kwargs)
@@ -46,9 +66,6 @@ def print_banner(text, **kwargs):
 
 if __name__ == '__main__':
 
-    name = input('Wat is jouw naam? : ')
+    name = input('What is your name? : ')
 
-    banner(name)
-
-    s = box(name)
-    print(s)
+    banner(name, c = '#')
